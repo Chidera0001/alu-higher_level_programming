@@ -1,26 +1,13 @@
 #!/usr/bin/python3
-'''
-This script fetches the status information from the URL
-'https://alu-intranet.hbtn.io/status' and prints the results in a formatted way.
-
-Dependencies:
-- requests library (install using 'pip install requests')
-
-Usage:
-python fetch_status.py
-
-Example Output:
-'''
+""" a Python script that fetches https://intranet.hbtn.io/status """
 import urllib.request
 
-if __name__ == "__main__":
-    '''
-    Fetches the status information from the specified URL and prints the results in a formatted way.
-    '''
-    url = 'https://alu-intranet.hbtn.io/status'
-    request = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as response:
-        data = response.read()
-        info = f"Body response:\n\t- type: {type(data)}\n\t- content: {data}\n\t- utf8 content: {data.decode('utf-8')}"
-        print(info)
 
+if __name__ == '__main__':
+    req = urllib.request.Request('https://intranet.hbtn.io/status')
+    with urllib.request.urlopen(req) as response:
+        print("Body response:")
+        html = response.read()
+        print("\t- type:", type(html))
+        print("\t- content:", html)
+        print("\t- utf8 content:", html.decode('utf-8'))
