@@ -10,7 +10,9 @@ Usage:
 python fetch_status.py
 
 Example Output:
+
 """
+
 import urllib.request
 
 if __name__ == "__main__":
