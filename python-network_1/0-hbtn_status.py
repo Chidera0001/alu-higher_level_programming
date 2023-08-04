@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-'''This script fetches the status information from the URL
+"""
+This script fetches the status information from the URL
  'https://alu-intranet.hbtn.io/status' and prints the results in a formatted way.
 
 Dependencies:
@@ -9,7 +10,7 @@ Usage:
 python fetch_status.py
 
 Example Output:
-'''
+"""
 import urllib.request
 
 if __name__ == "__main__":
