@@ -1,3 +1,15 @@
 #!/usr/bin/node
-const argList = process.argv.slice(2).filter(arg => !isNaN(parseInt(arg)));
-console.log(argList.length > 1 ? Math.max(...argList.sort((a, b) => b - a).slice(1)) : 0);
+
+let max = 0;
+let second = 0;
+for (let i = 2; i < process.argv.length; i++) {
+  const current = parseInt(process.argv[i]);
+  if (current > max) {
+    second = max;
+    max = current;
+  }
+  if (current > second && current < max) {
+    second = current;
+  }
+}
+console.log(second);
