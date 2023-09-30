@@ -1,14 +1,13 @@
 #!/usr/bin/node
-const args = process.argv;
-const conA = Number(args[2]);
-const conB = Number(args[3]);
+
+const a = process.argv[2];
+const b = process.argv[3];
 
 function add (a, b) {
-  console.log(a + b);
+  if (isNaN(a) || isNaN(b)) {
+    return (NaN);
+  } else {
+    return (parseInt(a) + parseInt(b));
+  }
 }
-
-if (conA && conB) {
-  add(conA, conB);
-} else {
-  console.log('NaN');
-}
+console.log(add(a, b));
